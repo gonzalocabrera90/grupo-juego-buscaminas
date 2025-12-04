@@ -1,4 +1,4 @@
-from casals import casals
+from casals import mauricioCasals
 
 if __name__ == "__main__":
-	casals()
+	mauricioCasals()
