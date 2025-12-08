@@ -1,7 +1,8 @@
-// ingresar coordenadas ()
-// verificar posicion()
-// despejar ()
-// mostrar tablero ()
-// ganaste ()
-// print ganaste ()
-// perdiste ()
+// ingresar coordenadas () == sandra
+// verificar posicion() == bel
+// despejar () == gonza
+// mostrar tablero () == juli
+// ganaste () == sofi
+// print ganaste () == sofi
+// perdiste () == gabriel
+// jugar () == bel
