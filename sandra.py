@@ -26,7 +26,9 @@ def niveles():
             niveles()
 
 def crear_tableros(nivel):
-    
+    tablero1 = []
+    tablero2 = []
+
     if nivel == "1":
         tablero1 = gonzalo.generar_matriz_jugador(5, 5)
         tablero2 = gonzalo.generar_matriz_minas(5, 5, 5)
@@ -42,3 +44,4 @@ def crear_tableros(nivel):
         minas = int(input("ingrese la cantidad de minas: "))
         tablero1 = gonzalo.generar_matriz_jugador(filas, columnas)
         tablero2 = gonzalo.generar_matriz_minas(filas, columnas, minas)
+    return tablero1, tablero2

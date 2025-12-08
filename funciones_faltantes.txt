@@ -1,0 +1,7 @@
+// ingresar coordenadas ()
+// verificar posicion()
+// despejar ()
+// mostrar tablero ()
+// ganaste ()
+// print ganaste ()
+// perdiste ()
