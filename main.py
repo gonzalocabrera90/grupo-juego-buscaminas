@@ -1,4 +1,8 @@
-from casals import mauricioCasals
+import sandra
+import sofia
+import gabriel
+import gonzalo
+import archivobelen
 
-if __name__ == "__main__":
-	mauricioCasals()
+vidas = 3
+archivobelen.menu(vidas)
