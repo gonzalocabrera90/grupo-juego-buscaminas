@@ -51,6 +51,7 @@ def jugar(tablero_jugador, tablero_minas, lugares_a_descubrir, vidas, inicial):
         # Verificar posición
         es_mina, numero_adyacentes = verificar_posicion(tablero_minas, fila, columna)
         
+        
         if es_mina:
             vidas -= 1
             print(f"¡Boom! Perdiste una vida. Vidas restantes: {vidas}")
