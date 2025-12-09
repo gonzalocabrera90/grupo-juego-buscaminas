@@ -1,3 +1,9 @@
+import sandra
+import sofia
+import archivobelen
+import gonzalo
+
+
 def gabriel():
 	print("mi nombre es gabriel")
 
