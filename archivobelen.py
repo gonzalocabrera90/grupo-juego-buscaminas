@@ -39,34 +39,44 @@ def verificar_posicion(tablero_minas, fila, columna):
     
 
 
-def jugar(tablero_jugador, tablero_minas, lugares_a_descubrir, vidas, inicial):
+def jugar(tablero_jugador, tablero_minas, lugares_a_descubrir, vidas, ):
     descubiertos = 0  # Contador de celdas descubiertas sin minas
     while True:
         # Mostrar tablero
         juli.mostrar(tablero_jugador)
         
-        # Pedir coordenadas (función faltante en sandra.py)
+        # Pedir coordenadas 
         fila, columna = sandra.ingresar_coordenadas(tablero_jugador)  # Debe validar rango
         
         # Verificar posición
-        es_mina, numero_adyacentes = verificar_posicion(tablero_minas, fila, columna)
+        es_mina, minas_adyacentes = verificar_posicion(tablero_minas, fila, columna)
         
-        
+
         if es_mina:
             vidas -= 1
             print(f"¡Boom! Perdiste una vida. Vidas restantes: {vidas}")
             if vidas == 0:
                 gabriel.perdiste()  
                 break
-        else:
-            # Despejar celda (función faltante en gonzalo.py)
-            descubrir.descubrir(tablero_jugador, tablero_minas, fila, columna)
-            descubiertos += 1  # Asumiendo que despejar actualiza y cuenta
-            
-            if descubiertos == lugares_a_descubrir:
-                sofia.ganaste()  # Función faltante en sofia.py
-                break
         
+        else:
+            letra = " "   # Lo que quieras mostrar en celdas descubiertas
+
+            # LLAMADA CORRECTA A DESCUBRIR ✅
+            lugares_a_descubrir = descubrir.descubrir(
+                tablero_jugador,
+                tablero_minas,
+                fila,
+                columna,
+                letra,
+                lugares_a_descubrir
+            )
+
+            # Verificar victoria
+            if lugares_a_descubrir == 0:
+                sofia.ganaste()
+                break
+
 
 if __name__ == "__main__":
 	archivobelen()
