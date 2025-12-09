@@ -3,6 +3,8 @@ import sandra   # Para ingresar coordenadas
 import sofia    # Para ganaste
 import gabriel  # Para perdiste
 import sandra
+import descubrir
+import juli
 def archivobelen():
 	print("mi nombre es belen")
 
@@ -41,7 +43,7 @@ def jugar(tablero_jugador, tablero_minas, lugares_a_descubrir, vidas, inicial):
     descubiertos = 0  # Contador de celdas descubiertas sin minas
     while True:
         # Mostrar tablero
-        gonzalo.mostrar(tablero_jugador)
+        juli.mostrar(tablero_jugador)
         
         # Pedir coordenadas (función faltante en sandra.py)
         fila, columna = sandra.ingresar_coordenadas(tablero_jugador)  # Debe validar rango
@@ -57,7 +59,7 @@ def jugar(tablero_jugador, tablero_minas, lugares_a_descubrir, vidas, inicial):
                 break
         else:
             # Despejar celda (función faltante en gonzalo.py)
-            gonzalo.despejar(tablero_jugador, tablero_minas, fila, columna)
+            descubrir.descubrir(tablero_jugador, tablero_minas, fila, columna)
             descubiertos += 1  # Asumiendo que despejar actualiza y cuenta
             
             if descubiertos == lugares_a_descubrir:
