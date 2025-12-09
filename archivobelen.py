@@ -6,34 +6,6 @@ import sandra
 def archivobelen():
 	print("mi nombre es belen")
 
-def menu(vidas):
-    while True:
-        print("1. JUGAR")
-        print("2. INSTRUCCIONES")
-        print("3. SALIR")
-
-        opcion = input("opcion: ")
-        nivel_elegido = None
-        inicial = None
-        if opcion == "1":
-            print("JUEGO (tenes", vidas, "vidas)")
-            inicial = gabriel.pedir_nombre()
-            print( inicial )
-            nivel_elegido = sandra.niveles()
-        elif opcion == "2":
-            print("INSTRUCCIONES:")
-            menu(vidas)
-        elif opcion == "3":
-            print("Salir")
-            nivel_elegido = None
-            inicial = None
-            break
-        else:
-            print("opcion invalida.")
-            menu(vidas)
-        return nivel_elegido, inicial
-    
-
 def verificar_posicion(tablero_minas, fila, columna):
     # Verificar si la posición actual es una mina
     if tablero_minas[fila][columna] == "B":
@@ -81,7 +53,7 @@ def jugar(tablero_jugador, tablero_minas, lugares_a_descubrir, vidas, inicial):
             vidas -= 1
             print(f"¡Boom! Perdiste una vida. Vidas restantes: {vidas}")
             if vidas == 0:
-                gabriel.perdiste()  # Función faltante en gabriel.py
+                gabriel.perdiste()  
                 break
         else:
             # Despejar celda (función faltante en gonzalo.py)

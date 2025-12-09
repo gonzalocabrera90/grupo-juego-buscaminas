@@ -1,3 +1,9 @@
+import sandra
+import sofia
+import archivobelen
+import gonzalo
+
+
 def gabriel():
 	print("mi nombre es gabriel")
 
@@ -9,3 +15,12 @@ def pedir_nombre():
     jugador = input("ingrese su nombre  : ")
     letra_inicial = jugador[0]
     return letra_inicial
+
+
+def perdiste(vidas):
+    if vidas == 0 :
+        print("se te acabaron las vidas ")
+
+        return True
+    return False 
+
