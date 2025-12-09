@@ -2,6 +2,9 @@
 def sofia():
     print("Mi nombre es Sofia")
 
+import gabriel
+import sandra
+
 def menu(vidas):
     while True:
         print("1. JUGAR")
