@@ -60,7 +60,22 @@ def crear_tableros(nivel):
                 print("La cantidad de filas y columnas debe ser mayor a 2. Ingrese nuevamente.")
     return tablero1, tablero2, lugares_a_descubrir
 
-def ingresar_coordenadas():
-    fila = int(input("Ingresa la fila: "))
-    columna = int(input("Ingresa la columna: "))
-    return fila, columna
+def ingresar_coordenadas(tablero_jugador, inicial):
+    fila = 0
+    columna = 0
+    while True:
+        print("Ingresa las coordenadas que deseas descubrir:")
+        fila = input("Ingresa la fila: ")
+        columna = input("Ingresa la columna: ")
+        if len(fila) == 0 and len(columna) == 0:
+            print("Dato vacio. Ingresar nuevamente la fila y columna")
+            fila_number = int(fila)
+            columna_number = int(columna)
+            if fila_number in range(0, len(tablero_jugador)) and columna_number in range(0, len(tablero_jugador[0])):
+                if tablero_jugador[fila_number][columna_number] == inicial:
+                    fila_number = -1
+                    break
+            else:
+                print("Datos incorrectos. Ingresar nuevamente la fila y columna")
+
+    return fila_number, columna_number
