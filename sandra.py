@@ -19,8 +19,10 @@ def niveles():
     opcion= input("")
     while True:
         if opcion in ["1","2","3","4"]:
-            crear_tableros(opcion)
-            break
+            return crear_tableros(opcion)
+        # Así estaba antes: 
+        # crear_tableros(opcion) 
+        #    break
         else:
             print("OPCION INCORRECTA, ELIGE DE NUEVO.")
             niveles()
@@ -49,3 +51,8 @@ def crear_tableros(nivel):
         tablero2 = gonzalo.generar_matriz_minas(filas, columnas, minas)
         lugares_a_descubrir = filas*columnas - minas
     return tablero1, tablero2, lugares_a_descubrir
+
+def ingresar_coordenadas():
+    fila = int(input("Ingresa la fila: "))
+    columna = int(input("Ingresa la columna: "))
+    return fila, columna
