@@ -1,10 +1,11 @@
-import gonzalo  # Para mostrar y despejar
 import sandra   # Para ingresar coordenadas
 import sofia    # Para ganaste
 import gabriel  # Para perdiste
 import sandra
-import descubrir
 import juli
+import descubrir
+
+
 def archivobelen():
 	print("mi nombre es belen")
 
@@ -12,7 +13,7 @@ def verificar_posicion(tablero_minas, fila, columna):
     # Verificar si la posición actual es una mina
     if tablero_minas[fila][columna] == "B":
         return True, 0  # Es mina, no importa el número adyacente
-
+        
     # Si no es mina, contar minas alrededor
     filas_totales = len(tablero_minas)
     columnas_totales = len(tablero_minas[0])
@@ -36,47 +37,42 @@ def verificar_posicion(tablero_minas, fila, columna):
 
     return False, minas_adyacentes
 
-    
 
-
-def jugar(tablero_jugador, tablero_minas, lugares_a_descubrir, vidas, ):
+def jugar(tablero_jugador, tablero_minas, lugares_a_descubrir, vidas, inicial):
     descubiertos = 0  # Contador de celdas descubiertas sin minas
     while True:
         # Mostrar tablero
         juli.mostrar(tablero_jugador)
         
-        # Pedir coordenadas 
-        fila, columna = sandra.ingresar_coordenadas(tablero_jugador)  # Debe validar rango
-        
+        # Pedir coordenadas (función faltante en sandra.py)
+        fila, columna = sandra.ingresar_coordenadas(tablero_jugador, inicial)  # Debe validar rango
+        if fila == -1:
+             print("El lugar ya fue elegido.")
+             continue
         # Verificar posición
-        es_mina, minas_adyacentes = verificar_posicion(tablero_minas, fila, columna)
+        #es_mina, numero_adyacentes = verificar_posicion(tablero_minas, tablero_jugador, fila, columna, inicial)
+        es_mina, numero_adyacentes = verificar_posicion(tablero_minas, fila, columna)
         
-
         if es_mina:
             vidas -= 1
             print(f"¡Boom! Perdiste una vida. Vidas restantes: {vidas}")
-            if vidas == 0:
-                gabriel.perdiste()  
+            tablero_jugador[fila][columna] = "B"
+            if gabriel.perdiste(vidas): ######
                 break
-        
+            # if vidas == 0:
+            #     gabriel.perdiste()  
+            #     break
         else:
-            letra = " "   # Lo que quieras mostrar en celdas descubiertas
-
-            # LLAMADA CORRECTA A DESCUBRIR ✅
-            lugares_a_descubrir = descubrir.descubrir(
-                tablero_jugador,
-                tablero_minas,
-                fila,
-                columna,
-                letra,
-                lugares_a_descubrir
-            )
-
-            # Verificar victoria
+            # Despejar celda (función faltante en gonzalo.py)
+            lugares_a_descubrir = descubrir.descubrir(tablero_jugador, tablero_minas, fila, columna, inicial, lugares_a_descubrir)######
+            #descubrir.descubrir(tablero_jugador, tablero_minas, fila, columna)
+            #descubiertos += 1  # Asumiendo que despejar actualiza y cuenta
+            
             if lugares_a_descubrir == 0:
                 sofia.ganaste()
+                juli.mostrar(tablero_jugador)  # Función faltante en sofia.py
                 break
+        
 
-
-if __name__ == "__main__":
+if __name__ == "_main_":
 	archivobelen()
