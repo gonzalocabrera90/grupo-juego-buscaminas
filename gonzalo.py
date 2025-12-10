@@ -26,8 +26,5 @@ def generar_matriz_minas(filas = 10, columnas = 10, minas = 10):
 
 
 def cargarminas(minas, matriz_minas):
-    print(minas)
     for f, c in minas:
         matriz_minas[f][c] = "B"
-
-
