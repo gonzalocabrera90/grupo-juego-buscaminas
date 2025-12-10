@@ -1,6 +1,7 @@
 def sofia():
     print("Mi nombre es Sofia")
 
+import juli
 import gabriel
 import sandra
 
@@ -20,7 +21,7 @@ def menu(vidas):
             nivel_elegido = sandra.niveles()
         elif opcion == "2":
             print("INSTRUCCIONES:")
-            menu(vidas)
+            juli.instrucciones()
         elif opcion == "3":
             print("Salir")
             nivel_elegido = None
@@ -30,6 +31,12 @@ def menu(vidas):
             print("opcion invalida.")
             menu(vidas)
         return nivel_elegido, inicial
+
+
+
+def ganaste(letra_inicial):
+    print("FELICITACIONES", letra_inicial, "GANASTE")
+
 
 if __name__ == "__main__":
     sofia()
