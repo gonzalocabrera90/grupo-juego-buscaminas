@@ -26,17 +26,16 @@ def menu(vidas):
         elif opcion == "3":
             print("Salir")
             nivel_elegido = None
-            inicial = None
-            break
+            inicial = "Salir"
+            return nivel_elegido, inicial
         else:
-            print("opcion invalida.")
+            print("Opcion invalida.")
             menu(vidas)
         return nivel_elegido, inicial
 
 
-
-def ganaste(letra_inicial):
-    print("FELICITACIONES", letra_inicial, "GANASTE")
+def ganaste():
+    print("FELICITACIONES,GANASTE")
 
 
 if __name__ == "__main__":

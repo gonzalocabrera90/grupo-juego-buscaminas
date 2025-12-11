@@ -13,7 +13,7 @@ def filaInicial(vista, test, fila, columna, letra, lugares_a_descubrir):
     conjunto_indice_final = [(0, -1), (1, 0), (1, -1)]
     if columna == 0:# si el index es el primero
         return setValores(vista, test, fila, columna, conjunto_indice_inicio, letra, lugares_a_descubrir)
-    elif columna == len(test) - 1:# si el index es el ultimo
+    elif columna == len(test[0]) - 1:# si el index es el ultimo
         return setValores(vista, test, fila, columna, conjunto_indice_final, letra, lugares_a_descubrir)
     else:#index del medio
         return setValores(vista, test, fila, columna, conjunto_indice_medio, letra, lugares_a_descubrir)
@@ -23,9 +23,10 @@ def filaFinal(vista, test, fila, columna, letra, lugares_a_descubrir):
     conjunto_indice_inicio = [(0, 1), (-1, 0), (-1, 1)]
     conjunto_indice_medio = [(0, 1), (0, -1), (-1, 0), (-1, 1), (-1, -1)]
     conjunto_indice_final = [(0, -1), (-1, 0), (-1, -1)]
+
     if columna == 0:# si el index es el primero
         return setValores(vista, test, fila, columna, conjunto_indice_inicio, letra, lugares_a_descubrir)
-    elif columna == len(test) - 1:# si el index es el ultimo
+    elif columna == len(test[0]) - 1:# si el index es el ultimo
         return setValores(vista, test, fila, columna, conjunto_indice_final, letra, lugares_a_descubrir)
     else:#index del medio
         return setValores(vista, test, fila, columna, conjunto_indice_medio, letra, lugares_a_descubrir)
@@ -37,7 +38,7 @@ def filaInterna(vista, test, fila, columna, letra, lugares_a_descubrir):
     conjunto_indice_final = [(0, -1), (1, 0), (1, -1), (-1, 0), (-1, -1)]
     if columna == 0:# si el index es el primero
         return setValores(vista, test, fila, columna, conjunto_indice_inicio, letra, lugares_a_descubrir)
-    elif columna == len(test) - 1:# si el index es el ultimo
+    elif columna == len(test[0]) - 1:# si el index es el ultimo
         return setValores(vista, test, fila, columna, conjunto_indice_final, letra, lugares_a_descubrir)
     else:#index del medio
         return setValores(vista, test, fila, columna, conjunto_indice_medio, letra, lugares_a_descubrir)
