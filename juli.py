@@ -4,7 +4,7 @@
 # Use las comillas triples para usar saltos de linea y no tantos print()
 def instrucciones():
     print("""
-1° Elegir el nivel de juego. Recuerda que puedes seleccionar el número de filas, columnas y minas.
+          1° Elegir el nivel de juego. Recuerda que puedes seleccionar el número de filas, columnas y minas.
           2° Para jugar ingresa primero la fila y la columna.
           3° Intente esquivar todas la minas para ganar. Tienes 3 errores posibles.
     """)
